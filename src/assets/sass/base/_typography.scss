@@ -1,0 +1,50 @@
+@import '../utils/funcitons';
+
+.display-bold {
+
+}
+
+.display-light {
+}
+  
+.title-large {
+}
+  
+.title-normal {
+}
+  
+.title-small {
+}
+  
+.subtitle {
+}
+  
+.caption {
+}
+
+.large-text {
+}
+
+.large-text-bold {
+  @extend .large-text;
+
+  font-weight: bold;
+}
+
+.normal-text {
+}
+
+.normal-text-bold {
+  @extend .normal-text;
+
+  font-weight: bold;
+}
+
+.small-text {
+}
+
+.small-text-bold {
+  @extend .small-text;
+
+  font-weight: bold;
+}

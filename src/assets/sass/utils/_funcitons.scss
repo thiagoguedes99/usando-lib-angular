@@ -1,0 +1,17 @@
+@import 'variables';
+
+@function brand($color-name) {
+  @return map-get($brand, $color-name);
+}
+
+@function secundary($color-name) {
+  @return map-get($secundary, $color-name);
+}
+
+@function grayscale($color-name) {
+  @return map-get($grayscale, $color-name);
+}
+
+@function system($color-name) {
+  @return map-get($system, $color-name);
+}
