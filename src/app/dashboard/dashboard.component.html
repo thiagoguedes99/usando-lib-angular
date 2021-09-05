@@ -1,0 +1,194 @@
+<lib-col xs="12" noPadding='true'>
+  <lib-text
+    type="large"
+    state="bold"
+    className="dashboard-component__space-text"
+  >
+    Informações do PRR
+  </lib-text>
+
+  <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
+    <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-product">
+      <div style="display: flex; justify-content: center;">
+        <lib-icon name="cart"></lib-icon>
+        Produto
+      </div>
+      <a href="">sandboxsre</a>
+    </lib-card>    
+  </lib-col>
+
+  <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
+    <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-Initials">
+      <div style="display: flex; justify-content: center;">
+        <lib-icon name="verification"></lib-icon>
+        Sigla
+      </div>
+      <a href="">FF2</a>
+    </lib-card>    
+  </lib-col>
+
+  <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
+    <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-account">
+      <div style="display: flex; justify-content: center;">
+        <lib-icon name="person"></lib-icon>
+        Conta
+      </div>
+      <a href="">AWS</a>
+    </lib-card>    
+  </lib-col>
+
+  <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
+    <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-last-actualization">
+      <div style="display: flex; justify-content: center;">
+        <lib-icon name="refresh"></lib-icon>
+        Última atualização
+      </div>
+      <a href="">11.08.21 | 10:18</a>
+    </lib-card>    
+  </lib-col>
+
+</lib-col>
+
+<lib-col xs="12" noPadding='true' [style]="fix">
+  <lib-alert color="red">
+    <lib-icon name="atention"></lib-icon>
+    Clique sobre o pilar critico para mais informações.
+  </lib-alert>  
+</lib-col>
+
+<lib-col xs="12" noPadding='true'>
+  <lib-col xs="12" sm="12" md="7" lg="7" xl="7" className="dashboard-component__space-card--right" noPadding='true'>
+    <lib-text
+      type="large"
+      state="bold"
+      className="dashboard-component__space-text"
+    >
+      Pilares do PRR
+    </lib-text>
+
+    <!-- <lib-card className="dashboard-component__space-card--bottom" [style]="float"> -->
+    <lib-card className="dashboard-component__space-card--bottom">
+      <lib-col xs="12" sm="12" md="5" lg="5" xl="5" [style]="chartHeight">
+        <lib-circle-progress [percent]="percent"></lib-circle-progress>
+      </lib-col>
+
+      <lib-col xs="12" sm="12" md="7" lg="7" xl="7">
+        <lib-chart-collumn [isHorizontal]='isHorizontal' [isYLegend]="isYLegend" [data]="dataChart" height="266">
+        </lib-chart-collumn>
+      </lib-col>
+      
+      <!-- grafico redondo -->
+      <!-- <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> -->
+    </lib-card>    
+  </lib-col>
+
+  <lib-col xs="12" sm="12" md="5" lg="5" xl="5" className="dashboard-component__space-card--left" noPadding='true'>
+    <lib-text
+      type="large"
+      state="bold"
+      className="dashboard-component__space-text"
+    >
+      Risco
+    </lib-text>
+
+    <lib-card className="dashboard-component__space-card--bottom">
+      grafico de coluna
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </lib-card>    
+  </lib-col>
+</lib-col>
+
+<lib-col xs="12" noPadding='true'>
+  <lib-text
+    type="large"
+    state="bold"
+    className="dashboard-component__space-text"
+  >
+    Histórico de pontuação
+  </lib-text>
+
+  <lib-card className="dashboard-component__space-card--bottom">
+    grafico de linha
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </lib-card>    
+</lib-col>
+
+<lib-col xs="12" noPadding='true'>
+  <!-- <lib-col xs="12" sm="12" lg="7" xl="7" noPadding='true' [ngStyle]="{ padding-right: 10px; }"> -->
+  <!-- <lib-col xs="12" sm="12" lg="7" xl="7" noPadding='true' style="{ padding-right: 10px; }"> -->
+  <lib-col xs="12" sm="12" md="5" lg="7" xl="7" noPadding='true' className="dashboard-component__space-card--right">
+    <lib-text
+      type="large"
+      state="bold"
+      className="dashboard-component__space-text"
+    >
+      Siglas afetadas
+    </lib-text>
+
+    <lib-card className="dashboard-component__space-card--bottom">
+      <lib-table>
+        <th *ngFor="let item of myThead">{{ item }}</th>
+        <tr tbody *ngFor="let item of myBody">
+          <td *ngFor="let i of item">{{ i }}</td>
+        </tr>
+       </lib-table>
+    </lib-card>    
+  </lib-col>
+
+  <lib-col xs="12" sm="12" md="5" lg="5" xl="5" noPadding='true' className="dashboard-component__space-card--left">
+    <lib-text
+      type="large"
+      state="bold"
+      className="dashboard-component__space-text"
+    >
+      Débitos técnicos
+    </lib-text>
+
+    <lib-card className="dashboard-component__space-card--bottom">
+      grafico de redondo
+    </lib-card>    
+  </lib-col>
+</lib-col>

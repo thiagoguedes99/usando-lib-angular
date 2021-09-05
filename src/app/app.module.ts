@@ -14,11 +14,13 @@ import { AngularLibModule, CircleProgressModule } from 'lib-angular/dist/angular
 // import { AngularLibComponent } from 'lib-angular/projects/angular-lib/src/public-api';
 
 import { TestLibComponent } from './test-lib/test-lib.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestLibComponent,
+    DashboardComponent,
     // AngularLibComponent
   ],
   imports: [
