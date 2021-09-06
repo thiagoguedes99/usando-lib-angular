@@ -19,13 +19,13 @@ export class DashboardComponent implements OnInit {
     ['ABC', '0.2'],
   ]
 
-  fix = { marginBottom: '32px', position: 'sticky', top: '10px' }
+  // fix = { marginBottom: '32px', position: 'sticky', top: '10px' }
 
-  chartHeight = { height: '266px' }
+  // chartHeight = { height: '266px' }
 
   percent = 53
-  isHorizontal = true
-  isYLegend = true
+  // isHorizontal = true
+  // isYLegend = true
   dataChart = [
     {
       name: 'Excelência operacional',
