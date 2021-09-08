@@ -14,23 +14,22 @@ import { AngularLibModule, CircleProgressModule } from 'lib-angular/dist/angular
 // import { AngularLibComponent } from 'lib-angular/dist/angular-lib';
 // import { AngularLibComponent } from 'lib-angular/projects/angular-lib/src/public-api';
 
-import { TestLibComponent } from './test-lib/test-lib.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+// import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { AppInterceptorService } from './services/app-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestLibComponent,
-    DashboardComponent,
-    // AngularLibComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
     AngularLibModule,
-    CircleProgressModule
+
+    DashboardModule
   ],
   providers: [
     {
@@ -40,6 +39,5 @@ import { AppInterceptorService } from './services/app-interceptor.service';
     }
   ],
   bootstrap: [AppComponent]
-  // bootstrap: [TestLibComponent]
 })
 export class AppModule { }

@@ -1,23 +1,22 @@
 export interface DashboardModel {
   prr?: {
-    value: string | number,
+    value: number,
     chart: {
       name: string,
       data: string | number,
       color: string
     }[],
-
-    // operationalExcellence: string | number,
-    // safety: string | number,
-    // reliability: string | number,
-    // performanceEfficiency: string | number,
-    // costOptimization: string | number,
   },
+  // risk?: {
+  //   low: string | number,
+  //   medium: string | number,
+  //   critical: string | number,
+  // },
   risk?: {
-    low: string | number,
-    medium: string | number,
-    critical: string | number,
-  },
+    name: string,
+    data: string | number,
+    color: string
+  }[],
   // scoreHistory: [
   //   {
   //     date: string,

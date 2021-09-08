@@ -13,7 +13,7 @@ export class DashboardFactoryService {
   public getMetricsFactory({ status, body }: any): DashboardModel {
     return body && status === 200 ? ({
       prr: {
-        value: body?.prr?.value ? body.prr.value : 0,
+        value: body?.prr?.value ? Number(body.prr.value) : 0,
         chart: [
           {
             name: 'Excelência operacional',
@@ -42,11 +42,28 @@ export class DashboardFactoryService {
           }
         ],
       },
-      risk: {
-        low: body?.risk?.low ? body.risk.low : 0,
-        medium: body?.risk?.medium ? body.risk.medium : 0,
-        critical: body?.risk?.critical ? body.risk.critical : 0,
-      },
+      // risk: {
+      //   low: body?.risk?.low ? body.risk.low : 0,
+      //   medium: body?.risk?.medium ? body.risk.medium : 0,
+      //   critical: body?.risk?.critical ? body.risk.critical : 0,
+      // },
+      risk: [
+        {
+          name: 'Baixo',
+          data: body?.risk?.low ? body.risk.low : 0,
+          color: variablesStyle.green
+        },
+        {
+          name: 'Médio',
+          data: body?.risk?.medium ? body.risk.medium : 0,
+          color: variablesStyle.yellow
+        },
+        {
+          name: 'Critico',
+          data: body?.risk?.critical ? body.risk.critical : 0,
+          color: variablesStyle.red
+        },
+      ],
       scoreHistory: body.score_history.length > 0 ? body.score_history.map((item: {date: string, value: string | number}) => ({
         date: item.date,
         value: item.value,

@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import variablesStyle from '../../assets/sass/utils/variables';
+import { DashboardService } from './service/dashboard.service';
+import { DashboardFactoryService } from './service/dashboard.factory.service';
+import { DashboardModel } from './model/dashboard';
 
 
 @Component({
@@ -12,23 +15,25 @@ import variablesStyle from '../../assets/sass/utils/variables';
 export class DashboardComponent implements OnInit {
 
   variablesStyle = variablesStyle;
+  dashboard: DashboardModel
+  // dashboard: any
 
   myThead = [
     'Sigla',
     'Score',
   ]
 
-  myBody = [
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-    ['ABC', '0.2'],
-  ]
+  // myBody = [
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  //   ['ABC', '0.2'],
+  // ]
 
   // fix = { marginBottom: '32px', position: 'sticky', top: '10px' }
 
@@ -37,37 +42,52 @@ export class DashboardComponent implements OnInit {
   percent = 53
   // isHorizontal = true
   // isYLegend = true
-  dataChart = [
-    {
-      name: 'Excelência operacional',
-      data: '55',
-      color: '#33A49D'
-    },
-    {
-      name: 'Segurança',
-      data: '73',
-      color: '#FF008A'
-    },
-    {
-      name: 'Confiabilidade',
-      data: '97',
-      color: '#6A3E3E'
-    },
-    {
-      name: 'Eficiência performance',
-      data: '97',
-      color: '#6A3E3E'
-    },
-    {
-      name: 'Otimização custos',
-      data: '97',
-      color: '#6A3E3E'
-    }
-  ]
+  // dataChart = [
+  //   {
+  //     name: 'Excelência operacional',
+  //     data: '55',
+  //     color: '#33A49D'
+  //   },
+  //   {
+  //     name: 'Segurança',
+  //     data: '73',
+  //     color: '#FF008A'
+  //   },
+  //   {
+  //     name: 'Confiabilidade',
+  //     data: '97',
+  //     color: '#6A3E3E'
+  //   },
+  //   {
+  //     name: 'Eficiência performance',
+  //     data: '97',
+  //     color: '#6A3E3E'
+  //   },
+  //   {
+  //     name: 'Otimização custos',
+  //     data: '97',
+  //     color: '#6A3E3E'
+  //   }
+  // ]
 
-  constructor() { }
+  constructor(
+    private dashboardService: DashboardService,
+    private dashboardFactoryService: DashboardFactoryService
+  ) {}
 
   ngOnInit(): void {
+    this.dashboardService.getMetrics().subscribe(resp => {
+      console.log('getMetrics')
+      console.log(resp)
+      console.log('DashboardFactoryService')
+      console.log(this.dashboardFactoryService.getMetricsFactory(resp))
+      this.dashboard = this.dashboardFactoryService.getMetricsFactory(resp)
+      console.log(this.dashboard)
+    },
+    error => {
+      this.dashboard = this.dashboardFactoryService.getMetricsFactory(error)
+    })
+
   }
 
 }
