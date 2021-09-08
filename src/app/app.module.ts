@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AngularLibModule, CircleProgressModule } from 'lib-angular/dist/angular
 
 import { TestLibComponent } from './test-lib/test-lib.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppInterceptorService } from './services/app-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AngularLibModule,
     CircleProgressModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
   // bootstrap: [TestLibComponent]
 })

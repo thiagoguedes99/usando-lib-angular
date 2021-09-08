@@ -97,6 +97,17 @@
   &__pointer-info--space-right {
     margin-right: 32px;
   }
+
+  &__card__technical-debts__info__content {
+    transform: translateY(40%);
+  }
+
+  &__card__technical-debts__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
   
 }
 
@@ -126,6 +137,11 @@
     &__space-card--left {
       padding-left: 0px !important;
     }
+
+    &__card__technical-debts__info__content {
+      transform: none;
+    }
+  
   }
 }
 

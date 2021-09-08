@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import variablesStyle from '../../assets/sass/utils/variables';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,12 +11,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  variablesStyle = variablesStyle;
+
   myThead = [
     'Sigla',
     'Score',
   ]
 
   myBody = [
+    ['ABC', '0.2'],
+    ['ABC', '0.2'],
+    ['ABC', '0.2'],
+    ['ABC', '0.2'],
+    ['ABC', '0.2'],
+    ['ABC', '0.2'],
     ['ABC', '0.2'],
     ['ABC', '0.2'],
     ['ABC', '0.2'],
