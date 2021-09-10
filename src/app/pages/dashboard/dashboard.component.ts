@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit {
   percent = 53
 
   constructor(
-    private dashboardService: DashboardService,
-    private dashboardFactoryService: DashboardFactoryService
+    public dashboardService: DashboardService,
+    public dashboardFactoryService: DashboardFactoryService
   ) {}
 
   ngOnInit(): void {
