@@ -7,22 +7,11 @@ export interface DashboardModel {
       color: string
     }[],
   },
-  // risk?: {
-  //   low: string | number,
-  //   medium: string | number,
-  //   critical: string | number,
-  // },
   risk?: {
     name: string,
     data: string | number,
     color: string
   }[],
-  // scoreHistory: [
-  //   {
-  //     date: string,
-  //     value: string | number,
-  //   }
-  // ],
   scoreHistory?: {
     date: string,
     value: string | number,

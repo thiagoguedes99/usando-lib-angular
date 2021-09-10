@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import variablesStyle from '../../assets/sass/utils/variables';
+import variablesStyle from '../../../assets/sass/utils/variables';
 import { DashboardService } from './service/dashboard.service';
 import { DashboardFactoryService } from './service/dashboard.factory.service';
 import { DashboardModel } from './model/dashboard';
@@ -16,59 +16,9 @@ export class DashboardComponent implements OnInit {
 
   variablesStyle = variablesStyle;
   dashboard: DashboardModel
-  // dashboard: any
 
-  myThead = [
-    'Sigla',
-    'Score',
-  ]
-
-  // myBody = [
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  //   ['ABC', '0.2'],
-  // ]
-
-  // fix = { marginBottom: '32px', position: 'sticky', top: '10px' }
-
-  // chartHeight = { height: '266px' }
-
+  // DOTO: vai deletar
   percent = 53
-  // isHorizontal = true
-  // isYLegend = true
-  // dataChart = [
-  //   {
-  //     name: 'Excelência operacional',
-  //     data: '55',
-  //     color: '#33A49D'
-  //   },
-  //   {
-  //     name: 'Segurança',
-  //     data: '73',
-  //     color: '#FF008A'
-  //   },
-  //   {
-  //     name: 'Confiabilidade',
-  //     data: '97',
-  //     color: '#6A3E3E'
-  //   },
-  //   {
-  //     name: 'Eficiência performance',
-  //     data: '97',
-  //     color: '#6A3E3E'
-  //   },
-  //   {
-  //     name: 'Otimização custos',
-  //     data: '97',
-  //     color: '#6A3E3E'
-  //   }
-  // ]
 
   constructor(
     private dashboardService: DashboardService,

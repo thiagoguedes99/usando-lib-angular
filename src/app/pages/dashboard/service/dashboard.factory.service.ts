@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DashboardModel } from '../model/dashboard';
 
-import variablesStyle from '../../../assets/sass/utils/variables';
+import variablesStyle from '../../../../assets/sass/utils/variables';
 
 @Injectable({
   providedIn: 'root'
@@ -42,11 +42,6 @@ export class DashboardFactoryService {
           }
         ],
       },
-      // risk: {
-      //   low: body?.risk?.low ? body.risk.low : 0,
-      //   medium: body?.risk?.medium ? body.risk.medium : 0,
-      //   critical: body?.risk?.critical ? body.risk.critical : 0,
-      // },
       risk: [
         {
           name: 'Baixo',

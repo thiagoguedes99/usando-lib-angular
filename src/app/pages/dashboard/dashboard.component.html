@@ -18,7 +18,9 @@
     <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
       <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-product">
         <div style="display: flex; justify-content: center;">
-          <lib-icon name="cart"></lib-icon>
+          <lib-icon
+            name="cart"
+          ></lib-icon>
           Produto
         </div>
         <a href="">sandboxsre</a>
@@ -28,7 +30,9 @@
     <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
       <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-Initials">
         <div style="display: flex; justify-content: center;">
-          <lib-icon name="verification"></lib-icon>
+          <lib-icon
+            name="verification"
+          ></lib-icon>
           Sigla
         </div>
         <a href="">FF2</a>
@@ -38,7 +42,9 @@
     <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
       <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-account">
         <div style="display: flex; justify-content: center;">
-          <lib-icon name="person"></lib-icon>
+          <lib-icon
+            name="person"
+          ></lib-icon>
           Conta
         </div>
         <a href="">AWS</a>
@@ -48,7 +54,9 @@
     <lib-col xs="12" sm="6" lg="3" xl="3" noPadding='true'>
       <lib-card className="dashboard-component__space-card--bottom dashboard-component__cars-header dashboard-component__cars-last-actualization">
         <div style="display: flex; justify-content: center;">
-          <lib-icon name="refresh"></lib-icon>
+          <lib-icon
+            name="refresh"
+          ></lib-icon>
           Última atualização
         </div>
         <a href="">11.08.21 | 10:18</a>
@@ -57,15 +65,18 @@
 
   </lib-col>
 
-  <!-- <lib-col xs="12" noPadding='true' [style]="fix"> -->
   <lib-col xs="12" noPadding='true' [style]="{ marginBottom: '32px', position: 'sticky', top: '10px', zIndex: '1' }">
     <lib-alert color="red">
-      <lib-icon name="atention" [style]="{ marginRight: '32px' }"></lib-icon>
+      <lib-icon
+        name="atention"
+        [style]="{ marginRight: '32px' }"
+      ></lib-icon>
       Clique sobre o pilar critico para mais informações.
     </lib-alert>  
   </lib-col>
 
   <lib-col xs="12" noPadding='true'>
+
     <lib-col xs="12" sm="12" md="7" lg="7" xl="7" className="dashboard-component__space-card--right" noPadding='true'>
       <lib-text
         type="large"
@@ -75,34 +86,22 @@
         Pilares do PRR
       </lib-text>
 
-      <!-- <lib-card className="dashboard-component__space-card--bottom" [style]="float"> -->
       <lib-card className="dashboard-component__space-card--bottom">
-        <!-- <lib-col xs="12" sm="12" md="5" lg="5" xl="5" [style]="chartHeight"> -->
         <lib-col xs="12" sm="12" md="5" lg="5" xl="5" [style]="{ height: '266px' }">
-          <lib-circle-progress [percent]="dashboard.prr.value"></lib-circle-progress>
+          <lib-circle-progress
+            [percent]="dashboard.prr.value"
+          ></lib-circle-progress>
         </lib-col>
 
         <lib-col xs="12" sm="12" md="7" lg="7" xl="7">
-          <lib-chart-collumn [isHorizontal]="true" [isYLegend]="true" [data]="dashboard.prr.chart" height="266"></lib-chart-collumn>
+          <lib-chart-collumn
+            [isHorizontal]="true"
+            [isYLegend]="true"
+            [data]="dashboard.prr.chart"
+            height="266"
+          ></lib-chart-collumn>
         </lib-col>
-        
-        <!-- grafico redondo -->
-        <!-- <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> -->
-      </lib-card>    
+      </lib-card>
     </lib-col>
 
     <lib-col xs="12" sm="12" md="5" lg="5" xl="5" className="dashboard-component__space-card--left" noPadding='true'>
@@ -115,14 +114,30 @@
       </lib-text>
 
       <lib-card className="dashboard-component__space-card--bottom">
-        <lib-chart-collumn [data]="dashboard.risk" height="223"></lib-chart-collumn>
+        <lib-chart-collumn
+          [data]="dashboard.risk"
+          height="223"
+        ></lib-chart-collumn>
 
         <hr style="margin: '0px'; background: '#C4C4C4'; border: 'none'; height: '1px'">
 
         <div style="display: flex; justify-content: center; height: 44px; align-items: center">
-          <lib-pointer-info [color]="variablesStyle.green" text="Baixo" className="dashboard-component__pointer-info--space-right"></lib-pointer-info>
-          <lib-pointer-info [color]="variablesStyle.yellow" text="Médio" className="dashboard-component__pointer-info--space-right"></lib-pointer-info>
-          <lib-pointer-info [color]="variablesStyle.red" text="Critico"></lib-pointer-info>
+          <lib-pointer-info
+            className="dashboard-component__pointer-info--space-right"
+            [color]="variablesStyle.green"
+            text="Baixo"
+          ></lib-pointer-info>
+
+          <lib-pointer-info
+            className="dashboard-component__pointer-info--space-right"
+            [color]="variablesStyle.yellow"
+            text="Médio"
+          ></lib-pointer-info>
+
+          <lib-pointer-info
+            [color]="variablesStyle.red"
+            text="Critico"
+          ></lib-pointer-info>
         </div>
       </lib-card>    
     </lib-col>
@@ -170,8 +185,6 @@
   </lib-col>
 
   <lib-col xs="12" noPadding='true'>
-    <!-- <lib-col xs="12" sm="12" lg="7" xl="7" noPadding='true' [ngStyle]="{ padding-right: 10px; }"> -->
-    <!-- <lib-col xs="12" sm="12" lg="7" xl="7" noPadding='true' style="{ padding-right: 10px; }"> -->
     <lib-col xs="12" sm="12" md="6" lg="7" xl="7" noPadding='true' className="dashboard-component__space-card--right">
       <lib-text
         type="large"
@@ -183,8 +196,7 @@
 
       <lib-card className="dashboard-component__space-card--bottom">
         <lib-table>
-          <th *ngFor="let item of myThead">{{ item }}</th>
-          <!-- <tr tbody *ngFor="let item of myBody"> -->
+          <th *ngFor="let item of ['Sigla', 'Score']">{{ item }}</th>
           <tr tbody *ngFor="let item of dashboard.acronymsAffected">
             <td *ngFor="let i of item">{{ i }}</td>
           </tr>
@@ -203,25 +215,57 @@
 
       <lib-card className="dashboard-component__space-card--bottom">
         <lib-col xs="12" sm="12" md="6" [style]="{ height: '266px' }">
-          <lib-circle-progress [percent]="percent"></lib-circle-progress>
+          <lib-circle-progress
+            [percent]="percent"
+          ></lib-circle-progress>
         </lib-col>
+
         <lib-col xs="12" sm="12" md="6" className="dashboard-component__card__technical-debts__info__content">
           <div class="dashboard-component__card__technical-debts__info">
-            <lib-pointer-info type="small" [color]="variablesStyle.green" text="Baixo" className="dashboard-component__pointer-info--space-right"></lib-pointer-info>
-            <lib-tag text="4.6" [color]="variablesStyle.green"></lib-tag>
+            <lib-pointer-info
+              type="small"
+              [color]="variablesStyle.green"
+              text="Baixo"
+              className="dashboard-component__pointer-info--space-right"
+            ></lib-pointer-info>
+
+            <lib-tag
+              text="4.6"
+              [color]="variablesStyle.green"
+            ></lib-tag>
           </div>
 
           <div class="dashboard-component__card__technical-debts__info">
-          <lib-pointer-info type="small" [color]="variablesStyle.yellow" text="Médio" className="dashboard-component__pointer-info--space-right"></lib-pointer-info>
-          <lib-tag text="4.6" [color]="variablesStyle.yellow"></lib-tag>
+            <lib-pointer-info
+              type="small"
+              [color]="variablesStyle.yellow"
+              text="Médio"
+              className="dashboard-component__pointer-info--space-right"
+            ></lib-pointer-info>
+
+            <lib-tag
+              text="4.6"
+              [color]="variablesStyle.yellow"
+            ></lib-tag>
           </div>
 
           <div class="dashboard-component__card__technical-debts__info">
-            <lib-pointer-info type="small" [color]="variablesStyle.red" text="Critico" className="dashboard-component__pointer-info--space-right"></lib-pointer-info>
-            <lib-tag text="4.6" [color]="variablesStyle.red"></lib-tag>
+            <lib-pointer-info
+              type="small"
+              [color]="variablesStyle.red"
+              text="Critico"
+              className="dashboard-component__pointer-info--space-right"
+            ></lib-pointer-info>
+
+            <lib-tag
+              text="4.6"
+              [color]="variablesStyle.red"
+            ></lib-tag>
           </div>
         </lib-col>
+
       </lib-card>
+
     </lib-col>
   </lib-col>
 </ng-template>
