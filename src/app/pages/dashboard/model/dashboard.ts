@@ -14,16 +14,21 @@ export interface DashboardModel {
   }[],
   scoreHistory?: {
     date: string,
-    value: string | number,
+    data: string | number,
   }[],
   acronymsAffected?: [
     string,
     string | number
   ][],
   technicalDebts?: {
-    low: string | number,
-    medium: string | number,
-    critical: string | number,
+    chart: {
+      name: string,
+      data: string | number,
+      color: string
+    }[],
+    low: string,
+    medium: string,
+    critical: string,
   },
   error404?: boolean,
   error500?: boolean

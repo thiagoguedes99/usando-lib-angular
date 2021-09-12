@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { FuctionsService } from 'lib-angular/dist/angular-lib';
+
 import variablesStyle from '../../../assets/sass/utils/variables';
 import { DashboardService } from './service/dashboard.service';
 import { DashboardFactoryService } from './service/dashboard.factory.service';
@@ -17,22 +19,19 @@ export class DashboardComponent implements OnInit {
   variablesStyle = variablesStyle;
   dashboard: DashboardModel
 
-  // DOTO: vai deletar
-  percent = 53
+  chartDonutHeight: string = '';
 
   constructor(
     public dashboardService: DashboardService,
-    public dashboardFactoryService: DashboardFactoryService
-  ) {}
+    public dashboardFactoryService: DashboardFactoryService,
+    public fuctionsService: FuctionsService
+  ) {
+    this.chartDonutHeight = fuctionsService.isMobile() ? '100%' : '310'
+  }
 
   ngOnInit(): void {
     this.dashboardService.getMetrics().subscribe(resp => {
-      console.log('getMetrics')
-      console.log(resp)
-      console.log('DashboardFactoryService')
-      console.log(this.dashboardFactoryService.getMetricsFactory(resp))
       this.dashboard = this.dashboardFactoryService.getMetricsFactory(resp)
-      console.log(this.dashboard)
     },
     error => {
       this.dashboard = this.dashboardFactoryService.getMetricsFactory(error)

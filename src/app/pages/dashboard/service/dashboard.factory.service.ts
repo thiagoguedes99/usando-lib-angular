@@ -61,16 +61,33 @@ export class DashboardFactoryService {
       ],
       scoreHistory: body.score_history.length > 0 ? body.score_history.map((item: {date: string, value: string | number}) => ({
         date: item.date,
-        value: item.value,
+        data: item.value,
       })) : [],
       acronymsAffected: body.acronyms_affected.length > 0 ? body.acronyms_affected.map((item: {acronyms: string, score: string | number}) => ([
         item.acronyms,
         item.score
       ])) : [],
       technicalDebts: {
-        low: body?.technical_debts?.low ? body.technical_debts.low : 0,
-        medium: body?.technical_debts?.medium ? body.technical_debts.medium : 0,
-        critical: body?.technical_debts?.critical ? body.technical_debts.critical : 0,
+        chart: [
+          {
+            name: 'Baixo',
+            data: body?.technical_debts?.low ? body.technical_debts.low : 0,
+            color: variablesStyle.green
+          },
+          {
+            name: 'Médio',
+            data: body?.technical_debts?.medium ? body.technical_debts.medium : 0,
+            color: variablesStyle.yellow
+          },
+          {
+            name: 'Critico',
+            data: body?.technical_debts?.critical ? body.technical_debts.critical : 0,
+            color: variablesStyle.red
+          }
+        ],
+        low: body?.technical_debts?.low ? String(body.technical_debts.low) : '0',
+        medium: body?.technical_debts?.medium ? String(body.technical_debts.medium) : '0',
+        critical: body?.technical_debts?.critical ? String(body.technical_debts.critical) : '0',
       },
     }) :
 

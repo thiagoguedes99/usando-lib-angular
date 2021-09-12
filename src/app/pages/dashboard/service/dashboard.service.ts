@@ -33,32 +33,72 @@ export class DashboardService {
           },
           score_history: [
             {
-              date: '2021-09-01',
+              date: '2019-01-01',
               value: 5,
             },
             {
-              date: '2021-09-02',
+              date: '2019-02-01',
+              value: 3,
+            },
+            {
+              date: '2019-10-01',
+              value: 7,
+            },
+            {
+              date: '2019-12-01',
               value: 10,
             },
             {
-              date: '2021-09-05',
-              value: 15,
+              date: '2020-01-10',
+              value: 5,
             },
             {
-              date: '2021-09-07',
-              value: 20,
-            },
-            {
-              date: '2021-09-09',
-              value: 25,
-            },
-            {
-              date: '2021-09-15',
+              date: '2020-02-15',
               value: 30,
             },
             {
-              date: '2021-09-20',
-              value: 35,
+              date: '2020-05-01',
+              value: 1,
+            },
+            {
+              date: '2020-06-01',
+              value: 10,
+            },
+            {
+              date: '2020-07-19',
+              value: 40,
+            },
+            {
+              date: '2020-08-01',
+              value: 60,
+            },
+            {
+              date: '2020-09-23',
+              value: 15,
+            },
+            {
+              date: '2020-11-01',
+              value: 30,
+            },
+            {
+              date: '2020-12-01',
+              value: 2,
+            },
+            {
+              date: '2021-02-02',
+              value: 19,
+            },
+            {
+              date: '2021-04-05',
+              value: 28,
+            },
+            {
+              date: '2021-06-07',
+              value: 33,
+            },
+            {
+              date: '2021-10-09',
+              value: 50,
             }
           ],
           acronyms_affected: [
@@ -73,7 +113,31 @@ export class DashboardService {
             {
               acronyms: 'ghi',
               score: 0.6
-            }
+            },
+            {
+              acronyms: 'jkl',
+              score: 0.1
+            },
+            {
+              acronyms: 'mno',
+              score: 0.2
+            },
+            {
+              acronyms: 'pqr',
+              score: 0.3
+            },
+            {
+              acronyms: 'stu',
+              score: 0.4
+            },
+            {
+              acronyms: 'vxw',
+              score: 0.5
+            },
+            {
+              acronyms: 'yzz',
+              score: 0.6
+            },
           ],
           technical_debts: {
             low: 65,

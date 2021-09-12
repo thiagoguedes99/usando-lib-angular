@@ -153,34 +153,12 @@
       Histórico de pontuação
     </lib-text>
 
-    <lib-card className="dashboard-component__space-card--bottom">
-      grafico de linha
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <lib-card className="dashboard-component__space-card--bottom" [style]="{ padding: '24px' }">
+      <lib-chart-line
+        title="Médias do período"
+        [data]="dashboard.scoreHistory"
+        height="338"
+      ></lib-chart-line>
     </lib-card>    
   </lib-col>
 
@@ -215,9 +193,10 @@
 
       <lib-card className="dashboard-component__space-card--bottom">
         <lib-col xs="12" sm="12" md="6" [style]="{ height: '266px' }">
-          <lib-circle-progress
-            [percent]="percent"
-          ></lib-circle-progress>
+          <lib-chart-donut
+            [data]="dashboard.technicalDebts.chart"
+            [height]="chartDonutHeight"
+          ></lib-chart-donut>
         </lib-col>
 
         <lib-col xs="12" sm="12" md="6" className="dashboard-component__card__technical-debts__info__content">
@@ -230,7 +209,7 @@
             ></lib-pointer-info>
 
             <lib-tag
-              text="4.6"
+              [text]="dashboard.technicalDebts.low"
               [color]="variablesStyle.green"
             ></lib-tag>
           </div>
@@ -244,7 +223,7 @@
             ></lib-pointer-info>
 
             <lib-tag
-              text="4.6"
+              [text]="dashboard.technicalDebts.medium"
               [color]="variablesStyle.yellow"
             ></lib-tag>
           </div>
@@ -258,7 +237,7 @@
             ></lib-pointer-info>
 
             <lib-tag
-              text="4.6"
+              [text]="dashboard.technicalDebts.critical"
               [color]="variablesStyle.red"
             ></lib-tag>
           </div>
