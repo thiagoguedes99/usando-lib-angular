@@ -17,21 +17,21 @@ import { DashboardModel } from './model/dashboard';
 export class DashboardComponent implements OnInit {
 
   variablesStyle = variablesStyle;
-  dashboard: DashboardModel
+  dashboard : DashboardModel
 
-  chartDonutHeight: string = '';
+  chartDonutHeight: string = ''
 
   constructor(
-    public dashboardService: DashboardService,
+      public dashboardService: DashboardService,
     public dashboardFactoryService: DashboardFactoryService,
     public fuctionsService: FuctionsService
   ) {
-    this.chartDonutHeight = fuctionsService.isMobile() ? '100%' : '310'
+        this.chartDonutHeight = fuctionsService.isMobile() ? '100%' : '310'
   }
 
   ngOnInit(): void {
     this.dashboardService.getMetrics().subscribe(resp => {
-      this.dashboard = this.dashboardFactoryService.getMetricsFactory(resp)
+          this.dashboard = this.dashboardFactoryService.getMetricsFactory(resp) ;
     },
     error => {
       this.dashboard = this.dashboardFactoryService.getMetricsFactory(error)

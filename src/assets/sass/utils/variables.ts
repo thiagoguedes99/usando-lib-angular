@@ -3,6 +3,6 @@ const variablesStyle = {
   yellow: '#F1AE2F',
   red: '#B71C1C',
   blue: '#106EB0'
-}
+};
 
-export default variablesStyle
+export default variablesStyle;

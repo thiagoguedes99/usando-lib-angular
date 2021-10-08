@@ -20,11 +20,11 @@ export class AppInterceptorService implements HttpInterceptor {
       setHeaders: {
         Authorization: 'Bearer JWT_token_aqui'
       }
-     });
+    });
 
-     return next.handle(request)
-                .pipe(
-                  catchError(this.handleError)
-                )
+    return next.handle(request)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 }
