@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardFactoryService } from './dashboard.factory.service';
-import { DashboardModel } from '../model/dashboard';
+import { DashboardModelFactory } from '../model/dashboard';
 
 describe('Dashboard.FactoryService', () => {
   let service: DashboardFactoryService;
@@ -55,71 +55,88 @@ describe('Dashboard.FactoryService', () => {
           critical: 45,
         },
       }
-    }
+    };
 
-  const mockFactory: DashboardModel = {
-    prr: {
-      value: 59,
-      chart: [
+    const mockFactory: DashboardModelFactory = {
+      prr: {
+        value: 59,
+        chart: [
+          {
+            name: 'Excelência operacional',
+            data: 60,
+            color: '#106EB0'
+          },
+          {
+            name: 'Segurança',
+            data: 20,
+            color: '#B71C1C'
+          },
+          {
+            name: 'Confiabilidade',
+            data: 55,
+            color: '#106EB0'
+          },
+          {
+            name: 'Eficiência performance',
+            data: 30,
+            color: '#B71C1C'
+          },
+          {
+            name: 'Otimização custos',
+            data: 80,
+            color: '#106EB0'
+          }
+        ]
+      },
+      risk: [
         {
-          name: 'Excelência operacional',
+          name: 'Baixo',
           data: 60,
-          color: '#106EB0'
+          color: '#007A47'
         },
         {
-          name: 'Segurança',
+          name: 'Médio',
           data: 20,
+          color: '#F1AE2F'
+        },
+        {
+          name: 'Critico',
+          data: 40,
           color: '#B71C1C'
-        },
-        {
-          name: 'Confiabilidade',
-          data: 55,
-          color: '#106EB0'
-        },
-        {
-          name: 'Eficiência performance',
-          data: 30,
-          color: '#B71C1C'
-        },
-        {
-          name: 'Otimização custos',
-          data: 80,
-          color: '#106EB0'
         }
-      ]
-    },
-    risk: [
-      {
-        name: 'Baixo',
-        data: 60,
-        color: '#007A47'
-      },
-      {
-        name: 'Médio',
-        data: 20,
-        color: '#F1AE2F'
-      },
-      {
-        name: 'Critico',
-        data: 40,
-        color: '#B71C1C'
+      ],
+      scoreHistory: [
+        {
+          date: '2021-09-01',
+          data: 5
+        }
+      ],
+      acronymsAffected: [
+        [ 'abc', 0.4 ]
+      ],
+      technicalDebts: {
+        chart: [
+          {
+            name: 'Baixo',
+            data: 65,
+            color: '#007A47'
+          },
+          {
+            name: 'Médio',
+            data: 25,
+            color: '#F1AE2F'
+          },
+          {
+            name: 'Critico',
+            data: 45,
+            color: '#B71C1C'
+          }
+        ],
+        low: '65',
+        medium: '25',
+        critical: '45'
       }
-    ],
-    scoreHistory: [
-      {
-        date: '2021-09-01',
-        value: 5
-      }
-    ],
-    acronymsAffected: [
-      [ 'abc', 0.4 ]
-    ],
-    technicalDebts: {
-      low: 65,
-      medium: 25,
-      critical: 45
-    }
-  }
+    };
 
     expect(service.getMetricsFactory(mockResponse)).toEqual(mockFactory);
   });

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DashboardModel } from '../model/dashboard';
+import { DashboardModelFactory } from '../model/dashboard';
 
 import variablesStyle from '../../../../assets/sass/utils/variables';
 
@@ -10,7 +10,7 @@ export class DashboardFactoryService {
 
   constructor() { }
 
-  public getMetricsFactory({ status, body }: any): DashboardModel {
+  public getMetricsFactory({ status, body }: any): DashboardModelFactory {
     return body && status === 200 ? ({
       prr: {
         value: body?.prr?.value ? Number(body.prr.value) : 0,
@@ -91,12 +91,12 @@ export class DashboardFactoryService {
       },
     }) :
 
-    status === 404 ? ({
-      error404: true
-    }) :
+      status === 404 ? ({
+        error404: true
+      }) :
 
-    ({
-      error500: true
-    })
+        ({
+          error500: true
+        });
   }
 }

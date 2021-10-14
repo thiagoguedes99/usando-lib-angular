@@ -1,23 +1,29 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { Observable } from 'rxjs';
 
 import { DashboardService } from './dashboard.service';
 
+// xdescribe('DashboardService', () => {
+// fdescribe('DashboardService', () => {
 describe('DashboardService', () => {
   let service: DashboardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientModule,
+        // HttpClientModule,
+        HttpClientTestingModule
       ],
     });
 
     service = TestBed.inject(DashboardService);
   });
 
+  // xit('should be created', () => {
+  // fit('should be created', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
@@ -29,7 +35,7 @@ describe('DashboardService', () => {
   it('should return a Observable', () => {
     service.getMetrics().subscribe(resp => {
       expect(resp).toEqual(Observable);
-    })
+    });
   });
 
 });

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 // import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
+import { DashboardModelResponse, DashboardModelResponseMock } from '../model/dashboard';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +13,10 @@ export class DashboardService {
   constructor(private http: HttpClient) { }
 
   public getMetrics() {
-    // return this.http.get(`${environment.API_BACKEND}/dashboard` )
+    // return this.http.get<DashboardModelResponse>(`${environment.API_BACKEND}/dashboard` )
 
-    return new Observable<object>(observer => {
+    // return new Observable<DashboardModelResponseMock>(observer => {
+    return new Observable<any>(observer => {
       setTimeout(() =>
         observer.next({
           status: 200,
