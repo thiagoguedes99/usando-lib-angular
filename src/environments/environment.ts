@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_BACKEND: 'https://dev.mybackend'
+  API_BACKEND: 'https://dev.my-backend'
 };
 
 /*

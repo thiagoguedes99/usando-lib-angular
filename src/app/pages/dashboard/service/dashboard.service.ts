@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
 import { DashboardModelResponse, DashboardModelResponseMock } from '../model/dashboard';
@@ -11,6 +11,12 @@ import { DashboardModelResponse, DashboardModelResponseMock } from '../model/das
 export class DashboardService {
 
   constructor(private http: HttpClient) { }
+
+  public getGitHubTest() {
+    return this.http.get<any>(`${environment.API_BACKEND}/dashboard/usando-lib-angular` );
+
+    // return { teste: '' }
+  }
 
   public getMetrics() {
     // return this.http.get<DashboardModelResponse>(`${environment.API_BACKEND}/dashboard` )

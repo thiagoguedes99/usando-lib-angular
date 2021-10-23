@@ -10,16 +10,30 @@ import { DashboardService } from './dashboard.service';
 // fdescribe('DashboardService', () => {
 describe('DashboardService', () => {
   let service: DashboardService;
+  let httpClientSpy: { get: jasmine.Spy };
+
+  // beforeEach(() => {
+  //   TestBed.configureTestingModule({
+  //     imports: [
+  //       // HttpClientModule,
+  //       HttpClientTestingModule
+  //     ],
+  //   });
+
+  //   service = TestBed.inject(DashboardService);
+  // });
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        // HttpClientModule,
         HttpClientTestingModule
       ],
     });
 
-    service = TestBed.inject(DashboardService);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    service = new DashboardService(httpClientSpy as any);
+
+    // service = TestBed.inject(DashboardService);
   });
 
   // xit('should be created', () => {
@@ -36,6 +50,25 @@ describe('DashboardService', () => {
     service.getMetrics().subscribe(resp => {
       expect(resp).toEqual(Observable);
     });
+  });
+
+  it('should to test getGitHubTest request', () => {
+    const testStub = spyOn(service, 'getGitHubTest').and.callThrough();
+
+    service.getGitHubTest();
+
+    expect(testStub).toHaveBeenCalled();
+    expect(testStub).toHaveBeenCalledTimes(1);
+
+    expect(httpClientSpy.get).toHaveBeenCalled();
+    expect(httpClientSpy.get).toHaveBeenCalledTimes(1);
+    expect(httpClientSpy.get).toHaveBeenCalledWith('https://dev.my-backend/dashboard/usando-lib-angular');
+
+    // service.getGitHubTest().subscribe(resp => {
+    //   expect(resp).toEqual(Observable);
+    // });
+
+
   });
 
 });
