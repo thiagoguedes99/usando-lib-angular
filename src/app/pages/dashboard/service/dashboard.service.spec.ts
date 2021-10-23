@@ -24,11 +24,11 @@ describe('DashboardService', () => {
   // });
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule
-      ],
-    });
+    // TestBed.configureTestingModule({
+    //   imports: [
+    //     HttpClientTestingModule
+    //   ],
+    // });
 
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new DashboardService(httpClientSpy as any);
